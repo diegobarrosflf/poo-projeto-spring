@@ -5,12 +5,12 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.poo.flf.domain.Categoria;
-import com.poo.flf.repositories.CategoriaRespository;
+import com.poo.flf.repositories.CategoriaRepository;
 
 @Service
 public class CategoriaService {
 
-	private CategoriaRespository repo;
+	private CategoriaRepository repo;
 	
 	public Categoria find(Integer id) {
 		Optional<Categoria> obj = repo.findById(id);

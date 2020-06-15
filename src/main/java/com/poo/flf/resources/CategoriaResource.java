@@ -11,7 +11,7 @@ import com.poo.flf.domain.Categoria;
 import com.poo.flf.services.CategoriaService;
 
 @RestController
-@RequestMapping(value = "/categorias")
+@RequestMapping(value = "/categoria")
 public class CategoriaResource {
 	
 	@Autowired
