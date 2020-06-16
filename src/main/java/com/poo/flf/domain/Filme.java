@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.poo.flf.model.EntidadeNomeada;
 
 @Entity
@@ -17,6 +18,7 @@ public class Filme extends EntidadeNomeada implements Serializable {
 
 	private Double preco;
 	
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "FILME_CATEGORIA",
 		joinColumns =  @JoinColumn(name ="filme_id"),

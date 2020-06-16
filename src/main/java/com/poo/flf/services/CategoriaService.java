@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.poo.flf.domain.Categoria;
 import com.poo.flf.repositories.CategoriaRepository;
+import com.poo.flf.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
@@ -16,7 +17,8 @@ public class CategoriaService {
 	
 	public Categoria find(Integer id) {
 		Optional<Categoria> obj = repo.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"
+				+ " id: " + id + ", tipo: " + Categoria.class.getName()));
 	}
 	
 	
