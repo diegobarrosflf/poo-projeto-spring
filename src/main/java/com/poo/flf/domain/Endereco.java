@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.poo.flf.model.EntidadeBase;
 
 @Entity
@@ -18,6 +19,7 @@ public class Endereco extends EntidadeBase implements Serializable {
 	private String bairro;
 	private String cep;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
